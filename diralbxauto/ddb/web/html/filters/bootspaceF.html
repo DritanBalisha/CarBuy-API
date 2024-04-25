@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: black;
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.514);
+            border-radius: 0 0 10px 10px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+            color: #282c35;
+        }
+
+        span {
+            margin-bottom: 15px; /* Increase the margin for better spacing */
+            font-weight: bold;
+            color: #333;
+            font-size: 1.2em;
+        }
+
+        input {
+            margin: 5px 0; /* Adjusted margin for better spacing */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 80%;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #61dafb;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            color: #61dafbab;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media screen and (max-width: 600px) {
+            input {
+                width: 100%;
+            }
+
+            h1,
+            span,
+            a {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="POST" action="/bootspace">
+        <h1>What's the minimum boot space you need?</h1>
+        <span>This is roughly the number of large suitcases that will fit in the boot with the seats up.</span>
+        <input type="checkbox" name="bootSpace" value="1 suitcase"> 1 suitcase<br>
+        <input type="checkbox" name="bootSpace" value="2 suitcases"> 2 suitcases<br>
+        <input type="checkbox" name="bootSpace" value="3 suitcases"> 3 suitcases<br>
+        <input type="checkbox" name="bootSpace" value="4 suitcases"> 4 suitcases<br>
+        <input type="checkbox" name="bootSpace" value="+5 suitcases"> +5 suitcases<br>
+        <!-- Add more checkboxes as needed -->
+        <input type="submit" value="Next">
+    </form>
+    <a href="/brand">Skip</a>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+MakeName: Toyota, MakeID: 100
+ModelID: 1, ModelName: Corolla, MakeID: 100, VehicleType: Sedan
+ModelID: 2, ModelName: Camry, MakeID: 100, VehicleType: Sedan
+
+MakeName: BMW, MakeID: 200
+ModelID: 3, ModelName: X5, MakeID: 200, VehicleType: SUV
+ModelID: 4, ModelName: M8, MakeID: 200, VehicleType: Coupe
+
+MakeName: Mercedes-Benz, MakeID: 300
+ModelID: 5, ModelName: A-Class, MakeID: 300, VehicleType: Hatchback
+ModelID: 6, ModelName: E-Class, MakeID: 300, VehicleType: Sedan

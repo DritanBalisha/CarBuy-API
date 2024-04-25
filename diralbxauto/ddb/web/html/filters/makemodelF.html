@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4; /* Updated background color */
+        }
+
+        .main {
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .header {
+            background-color: #61dafbab;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+            color: #282c35;
+        }
+
+        .forma {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 0 0 10px 10px;
+            margin-top: -10px; /* Adjusted margin for better alignment */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+            text-align: left;
+            width: 80%;
+        }
+
+        select,
+        input {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 80%;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+
+        select {
+            appearance: none; /* Remove default arrow in Chrome/Edge */
+        }
+
+        form input[type="submit"] {
+            background-color: #61dafb;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            color: #61dafbab;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1em;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+            <h1>Select the make and the model you want</h1>
+        </div>
+        <div class="forma">
+            <form method="POST" action="/makemodel/">
+                <!-- Make dropdown -->
+                <label for="makeID">Make:</label>
+                <select id="makeID" name="makeID">
+                    {{ range .Makes }}
+                    <option value="{{ .MakeID }}" name="makeName">{{ .MakeName }}</option>
+                    {{ end }}
+                </select><br>
+
+                <!-- Model dropdown -->
+                <label for="modelID">Model:</label>
+                <select id="modelID" name="modelID">
+                    {{ range .Models }}
+                    <option value="{{ .ModelID }}" name="modelName">{{ .ModelName }}</option>
+                    {{ end }}
+                </select><br>
+                <input type="submit" value="Next">
+            </form>
+            <a href="/searchf">Skip</a>
+        </div>
+    </div>
+
+    <script>
+        // Function to update the models dropdown based on the selected make
+        function updateModelsDropdown() {
+            // Get the selected make ID
+            var makeID = document.getElementById("makeID").value;
+            var modelDropdown = document.getElementById("modelID");
+
+            // Clear the existing options
+            modelDropdown.innerHTML = "";
+
+            // Make a GET request to retrieve the models for the selected make
+            fetch("/models/" + makeID)
+                .then(response => response.json())
+                .then(data => {
+                    // Create new option elements for each model
+                    data.models.forEach(model => {
+                        var option = document.createElement("option");
+                        option.value = model.modelID;
+                        option.text = model.modelName; // Update this line
+                        modelDropdown.appendChild(option);
+                    });
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                });
+        }
+
+        // Attach the updateModelsDropdown function to the change event of the make dropdown
+        document.getElementById("makeID").addEventListener("change", updateModelsDropdown);
+
+        // Call the updateModelsDropdown function initially to populate the models dropdown
+        updateModelsDropdown();
+    </script>
+</body>
+
+</html>

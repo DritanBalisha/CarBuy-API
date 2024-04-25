@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>aLl -UsErSs-</title>
+</head>
+<body>
+	<h1>All Users</h1>
+	<form action="/users/{ID}" method="POST">
+		<label for="search">Search With User ID:</label>
+		<input type="text" id="search" name="search" placeholder="Enter User ID">
+		<button type="submit">Search</button>
+	</form>
+	<table>
+		<thead>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email</th>
+				<th>Phone</th>
+				<th>User Id</th>
+				<th>Active</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{range .}}
+			<tr>
+				<td>{{.First_name}}</td>
+				<td>{{.Last_name}}</td>
+				<td>{{.Email}}</td>
+				<td>{{.Phone}}</td>
+				<td>{{.User_id}}</td>
+				<td>{{.Active}}</td>
+			</tr>
+			{{end}}
+		</tbody>
+	</table>
+	<a href="/car/"><button>Car Posts</button></a>
+</body>
+</html>

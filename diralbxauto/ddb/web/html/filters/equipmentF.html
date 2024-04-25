@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .main {
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .header {
+            background-color: #61dafbab;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+            color: #282c35;
+        }
+
+        .forma {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.514);
+            border-radius: 0 0 10px 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: black;
+        }
+
+        form span {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #333;
+            font-size: 1.2em;
+        }
+
+        form input {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 80%;
+            box-sizing: border-box;
+        }
+
+        form input[type="submit"] {
+            background-color: #61dafb;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            color: #61dafbab;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media screen and (max-width: 600px) {
+            form input {
+                width: 100%;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            form span,
+            a {
+                font-size: 1em;
+            }
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+            <h1>Which popular standard equipment do you want?</h1>
+        </div>
+        <div class="forma">
+            <form method="POST" action="/equipment">
+                <span>This helps narrow down our recommendations. You can customize your car with additional equipment later.</span>
+                <input type="checkbox" name="equipment" value="Cruise Control"> Cruise Control<br>
+                <input type="checkbox" name="equipment" value="Navigation System"> Navigation System<br>
+                <input type="checkbox" name="equipment" value="Bluetooth Connectivity"> Bluetooth Connectivity<br>
+                <input type="checkbox" name="equipment" value="Backup Camera"> Backup Camera<br>
+                <input type="submit" value="Next">
+            </form>
+
+            <a href="/bootspace">Skip</a>
+        </div>
+    </div>
+</body>
+
+</html>

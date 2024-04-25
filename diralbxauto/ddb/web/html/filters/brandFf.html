@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+            
+        </div>
+    <form method="POST" action="/brand">
+        <h1>Are you considering any specific brands?</h1>
+        <span>If you'd consider any brand currently, select 'All brands' or skip this question.</span>
+        {{ range .Makes }}
+        <input type="checkbox" value="{{ .MakeID }}" id="brand" name="brand">{{ .MakeName }} <br>
+        {{ end }}
+        <!-- Add more checkboxes for other brands as needed -->
+        <input type="submit" value="Next">
+    </form>
+    <a href="/search">Skip</a>
+</div>
+</body>
+
+</html>

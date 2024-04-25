@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>All Cars</title>
+    <style>
+        @import url(https://use.fontawesome.com/releases/v5.0.6/css/all.css);
+    @import url(https://fonts.googleapis.com/css?family=Oswald:400|Raleway:400,700,400italic,700italic);
+    
+    
+    h1 {
+        font-family: 'Oswald', sans-serif;
+        text-align: center;
+    }
+    
+    a {
+        color: #a2ed56;
+    }
+    
+    a:hover {
+        color: #83e4e2;
+        text-decoration: none;
+    }
+    
+    .container {
+        margin: 0 auto;
+        max-width: 80em;
+    }
+    
+    p {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 40em;
+    }
+    
+    .screen-reader-text {
+        clip: rect(1px 1px 1px 1px);
+        clip: rect(1px, 1px, 1px, 1px);
+        height: 1px;
+        overflow: hidden;
+        position: absolute !important;
+        width: 1px;
+    }
+    
+    
+    
+    /************************************************/
+    /****************** NAVIGATION ******************/
+    /************************************************/
+    nav {
+        background: #e5e5e5;
+        color: #1d1f20;
+        left: 0;
+        position: relative;
+        top: 0;
+        width: 100%;
+        z-index: 9999;
+    }
+    
+    /*** INPUT ***/
+    nav input {
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+    }
+    
+    /*** LABEL ***/
+    nav label {
+        cursor: pointer;
+        display: block;
+        font: 2em/1 'Oswald', sans-serif;
+        padding: 0.5em;
+    }
+    
+    /* Hamburger Icon */
+    #menu-icon,
+    #menu-icon:before,
+    #menu-icon:after {
+        background: #1d1f20;
+        border-radius: 0.05em;
+        height: 0.2em;
+        transition: all 0.2s ease-in-out;
+        width: 100%;
+    }
+    
+    #menu-icon {
+        display: inline-block;
+        margin: 0.4em 0;
+        max-width: 1em;
+        position: relative;
+    }
+    
+    nav label #menu-icon {
+        float: right;
+    }
+    
+    #menu-icon:before,
+    #menu-icon:after {
+        content: '';
+        left: 0;
+        position: absolute;
+    }
+    
+    #menu-icon:before {
+        top: -0.4em;
+    }
+    
+    #menu-icon:after {
+        bottom: -0.4em;
+    }
+    
+    /* Close Icon */
+    nav input[type=checkbox]:checked + label #menu-icon {
+        background: transparent;
+    }
+    
+    nav input[type=checkbox]:checked + label #menu-icon:before {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+    
+    nav input[type=checkbox]:checked + label #menu-icon:after {
+        bottom: 0;
+        transform: rotate(45deg);
+    }
+    
+    
+    /*** MENU ***/
+    /* Overlay */
+    nav input:checked ~ #overlay {
+        background: #e5e5e5;
+        bottom: 0;
+        left: 0;
+        height: 100vh;
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 100vw;
+        z-index: -1;
+    }
+    
+    /* List */
+    nav ul {
+        font-size: 1.5em;
+        list-style: none;
+        margin: 0;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        padding: 0;
+        text-align: center;
+    }
+    
+    nav input:checked ~ ul {
+        margin: 1em;
+        max-height: inherit;
+        opacity: 1;
+    }
+    
+    nav ul > li {
+        margin: 0.5em 0;
+    }
+    
+    nav ul a {
+        color: #1d1f20!important;
+        text-decoration: none;
+    }
+    
+    nav ul a:hover {
+        text-decoration: underline;
+    }
+    
+    /* Social Media */
+    nav ul#social-media > li {
+        display: inline-block;
+        font-size: 1.5em;
+        margin: 0.5em;
+    }
+      </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <input id="responsive-menu" type="checkbox">
+      <label for="responsive-menu">CarTime <span id="menu-icon"></span></label>
+      <div id="overlay"></div>
+                <ul>
+                    <li>
+                        <a href="/cartime/" class="text-sm font-semibold text-gray-800 hover:text-gray-900">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-sm font-semibold text-gray-800 hover:text-gray-900">
+                            About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-sm font-semibold text-gray-800 hover:text-gray-900">
+                            Contact
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/car/carc/" class="text-sm font-semibold text-gray-800 hover:text-gray-900">
+                            Post a Car
+                        </a>
+                    </li>
+                    {{if .User.Active}}
+                    <li><a href="/logout">Log Out</a></li>
+                    {{else}}
+                    <li><a href="/login">Log In</a></li>
+                    {{end}}
+                </ul>
+                <ul id="social-media">
+                    <li>
+                        <a href="https://dribbble.com/erinesullivan">
+                            <i class="fab fa-dribbble"></i>
+                            <span class="screen-reader-text">Dribbble</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="www.youtube.com/@JB__Media_">
+                            <i class="fab fa-youtube"></i>
+                            <span class="screen-reader-text">YouTube</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/erin_e_sullivan">
+                            <i class="fab fa-twitter"></i>
+                            <span class="screen-reader-text">Twitter</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/erinesullivan1">
+                            <i class="fab fa-linkedin"></i>
+                            <span class="screen-reader-text">LinkedIn</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/JB__Media_/">
+                            <i class="fab fa-instagram"></i>
+                            <span class="screen-reader-text">Instagram</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+    </nav>
+
+    <main class="h-screen w-screen py-6 bg-yellow-50 flex items-center justify-center flex-wrap">
+        <!--     primera card -->
+        {{range .Cars}}
+        <div class="bg-white w-72 h-96 shadow-md rounded m-3">
+          <div class="h-3/4 w-full">
+            <img class="w-full h-full object-cover rounded-t" src="{{.PhotoFile}}" alt="diralbX">
+          </div>
+          <div class="w-full h-1/4 p-3">
+            <a href="{{.CarID}}" class=" hover:text-yellow-600 text-gray-700">
+              <span class="text-lg font-semibold uppercase tracking-wide ">{{.MakeName}} {{.ModelName}}</span>
+            </a>
+            <p class="text-gray-600 text-sm leading-5 mt-1">{{.Price}} FR</p>
+          </div>
+        </div>
+        {{end}}
+      </main>
+
+</body>
+
+</html>

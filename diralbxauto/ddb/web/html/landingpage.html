@@ -1,0 +1,444 @@
+<!-- <h1><a href="/car/carc/">Post A Car</a></h1>
+<h1><a href="/users/myCars/">my Car's</a></h1>
+<h1><a href="/car/">See Car Post's</a></h1> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <link rel="stylesheet" href="dot.css">
+    <link rel="stylesheet" href="button.css">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="./assets/styles/styles.css" /> -->
+    <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="w-full">
+        <header class="relative w-full border-b bg-white pb-4">
+            <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-2">
+                <div class="inline-flex items-center space-x-2">
+                    <span>
+                        <svg width="30" height="30" viewBox="0 0 50 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M23.2732 0.2528C20.8078 1.18964 2.12023 12.2346 1.08477 13.3686C0 14.552 0 14.7493 0 27.7665C0 39.6496 0.0986153 41.1289 0.83823 42.0164C2.12023 43.5449 23.2239 55.4774 24.6538 55.5267C25.9358 55.576 46.1027 44.3832 48.2229 42.4602C49.3077 41.474 49.3077 41.3261 49.3077 27.8158C49.3077 14.3055 49.3077 14.1576 48.2229 13.1714C46.6451 11.7415 27.1192 0.450027 25.64 0.104874C24.9497 -0.0923538 23.9142 0.00625992 23.2732 0.2528ZM20.2161 21.8989C20.2161 22.4906 18.9835 23.8219 17.0111 25.3997C15.2361 26.7803 13.8061 27.9637 13.8061 28.0623C13.8061 28.1116 15.2361 29.0978 16.9618 30.2319C18.6876 31.3659 20.2655 32.6479 20.4134 33.0917C20.8078 34.0286 19.871 35.2119 18.8355 35.2119C17.8001 35.2119 9.0233 29.3936 8.67815 28.5061C8.333 27.6186 9.36846 26.5338 14.3485 22.885C17.6521 20.4196 18.4904 20.0252 19.2793 20.4196C19.7724 20.7155 20.2161 21.3565 20.2161 21.8989ZM25.6893 27.6679C23.4211 34.9161 23.0267 35.7543 22.1391 34.8668C21.7447 34.4723 22.1391 32.6479 23.6677 27.9637C26.2317 20.321 26.5275 19.6307 27.2671 20.3703C27.6123 20.7155 27.1685 22.7864 25.6893 27.6679ZM36.0932 23.2302C40.6788 26.2379 41.3198 27.0269 40.3337 28.1609C39.1503 29.5909 31.6555 35.2119 30.9159 35.2119C29.9298 35.2119 28.9436 33.8806 29.2394 33.0424C29.3874 32.6479 30.9652 31.218 32.7403 29.8867L35.9946 27.4706L32.5431 25.1532C30.6201 23.9205 29.0915 22.7371 29.0915 22.5892C29.0915 21.7509 30.2256 20.4196 30.9159 20.4196C31.3597 20.4196 33.6771 21.7016 36.0932 23.2302Z"
+                                fill="black"></path>
+                        </svg>
+                    </span>
+                    <span class="font-bold">CarTime</span>
+                </div>
+                <div class="hidden lg:block">
+                    <ul class="inline-flex space-x-8">
+                        <li>
+                            <a href="#" class="text-sm font-semibold text-gray-800 hover:text-gray-900">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-sm font-semibold text-gray-800 hover:text-gray-900">
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-sm font-semibold text-gray-800 hover:text-gray-900">
+                                Contact
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/car/" class="text-sm font-semibold text-gray-800 hover:text-gray-900">
+                                Cars
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/car/carc/" class="text-sm font-semibold text-gray-800 hover:text-gray-900">
+                                Post A Car
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/users/myCars/" class="text-sm font-semibold text-gray-800 hover:text-gray-900">
+                                My Cars
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hidden lg:block">
+                    <button type="button"
+                        class="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
+                        Button text
+                    </button>
+                </div>
+                <div class="lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="h-6 w-6 cursor-pointer">
+                        <line x1="4" y1="12" x2="20" y2="12"></line>
+                        <line x1="4" y1="6" x2="20" y2="6"></line>
+                        <line x1="4" y1="18" x2="20" y2="18"></line>
+                    </svg>
+                </div>
+            </div>
+        </header>
+        <div class="relative w-full bg-white">
+            <div class="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
+                <div
+                    class="flex flex-col justify-center px-4 py-12 md:py-16 lg:col-span-7 lg:gap-x-6 lg:px-6 lg:py-24 xl:col-span-6">
+                    <div class="mt-8 flex max-w-max items-center space-x-2 rounded-full bg-gray-100 p-1">
+                        <div class="rounded-full bg-white p-1 px-2">
+                            <p class="text-sm font-medium">Number 1 Site</p>
+                        </div>
+                        <p class="text-sm font-medium">Car Sell&Buy →</p>
+                    </div>
+                    <h1 class="mt-8 text-3xl font-bold tracking-tight text-black md:text-4xl lg:text-6xl">
+                        Buy. Sell. WoW.
+                    </h1>
+                    <p class="mt-8 text-lg text-gray-700">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
+                        modi blanditiis dolores quasi eaque explicabo!
+                    </p>
+                    <form action="" class="mt-8 flex items-start space-x-2">
+                        <div class="frame">
+                           <a href="/car/carc/"><button type="button" class="custom-btn btn-3">
+                                <span>Sell a Car</span>
+                            </button></a>
+                        </div>
+                        <div class="frame">
+                            <a href="/carBuy/">  <button type="button" class="custom-btn btn-3">
+                                <span>Buy a Car</span>
+                            </button></a>
+                        </div>
+                    </form>
+                </div>
+                <div class="relative lg:col-span-5 lg:-mr-8 xl:col-span-6">
+                    <img class="aspect-[3/2] bg-gray-50 object-cover lg:aspect-[4/3] lg:h-[700px] xl:aspect-[16/9]"
+                        src="https://www.escapistmagazine.com/wp-content/uploads/2023/08/onepieceranking1.jpg"
+                        alt="" />
+                </div>
+            </div>
+        </div>
+        <div class="mx-auto my-32 max-w-7xl px-2 lg:px-8">
+            <div class="grid grid-cols-1 gap-y-8 text-center sm:grid-cols-2 sm:gap-12 lg:grid-cols-4">
+                <div>
+                    <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-blue-100">
+                        <svg class="h-9 w-9 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M11.9002 1.70002C9.20025 0.400016 5.80025 0.900016 3.50025 3.20002C0.900246 5.80002 0.600246 9.70002 2.60025 12.6L2.80025 12.8M2.80025 12.8C1.80025 13.7 1.80025 15.3 2.80025 16.3L7.70025 21.2C8.70025 22.2 10.3002 22.2 11.2002 21.2C12.2002 20.3 12.2002 18.7 11.2002 17.7L6.30025 12.8C5.40025 11.8 3.80025 11.8 2.80025 12.8ZM15.0002 8.50002L19.5002 13C20.8002 14.3 20.8002 16.4 19.5002 17.7L15.7002 21.5C14.4002 22.8 12.3002 22.8 11.0002 21.5M17.3002 7.40002C14.7002 10 10.0002 7.40002 10.0002 7.40002C7.30025 10.1 4.80025 8.40002 4.80025 8.40002L10.0002 3.20002C12.9002 0.300016 17.6002 0.300016 20.5002 3.20002C23.4002 6.10002 23.4002 10.8 20.5002 13.7L20.2002 14">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="mt-8 text-lg font-semibold text-black">Free</h3>
+                    <p class="mt-4 text-sm text-gray-600">
+                        No haggling, no fees, just great prices
+                    </p>
+                </div>
+                <div>
+                    <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-orange-100">
+                        <svg class="h-9 w-9 text-orange-600" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M4 7L10.1 3.4M18 7L11.9 3.4M16 21H1V7H21V10.5M22 16.6V23L19 22L16 23V16.7M12 3C12 3.55228 11.5523 4 11 4C10.4477 4 10 3.55228 10 3C10 2.44772 10.4477 2 11 2C11.5523 2 12 2.44772 12 3ZM23 14C23 16.2091 21.2091 18 19 18C16.7909 18 15 16.2091 15 14C15 11.7909 16.7909 10 19 10C21.2091 10 23 11.7909 23 14Z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="mt-8 text-lg font-semibold text-black">
+                        Convenient
+                    </h3>
+                    <p class="mt-4 text-sm text-gray-600">
+                        thousands of trusted dealers to buy or sell within a few clicks
+                    </p>
+                </div>
+                <div>
+                    <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-green-100">
+                        <svg class="h-9 w-9 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="mt-8 text-lg font-semibold text-black">
+                        Light &amp; Dark Version
+                    </h3>
+                    <p class="mt-4 text-sm text-gray-600">
+                        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
+                        sint. Velit officia consequat duis enim velit mollit.
+                    </p>
+                </div>
+                <div>
+                    <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-red-100">
+                        <svg class="h-9 w-9 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="mt-8 text-lg font-semibold text-black">Filter Blocks</h3>
+                    <p class="mt-4 text-sm text-gray-600">
+                        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
+                        sint. Velit officia consequat duis enim velit mollit.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <main class="p-5 bg-light-blue">
+            <div class="flex justify-center items-start my-2">
+                <div class="w-full sm:w-10/12 md:w-1/2 my-1">
+                    <h2 class="text-xl font-semibold text-vnet-blue mb-2">FAQs</h2>
+                    <ul class="flex flex-col">
+                        <li class="bg-white my-2 shadow-lg" x-data="accordion(1)">
+                            <h2 @click="handleClick()"
+                                class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer">
+                                <span>What is cartime?</span>
+                                <svg :class="handleRotate()"
+                                    class="fill-current text-purple-700 h-6 w-6 transform transition-transform duration-500"
+                                    viewBox="0 0 20 20">
+                                    <path
+                                        d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10">
+                                    </path>
+                                </svg>
+                            </h2>
+                            <div x-ref="tab" :style="handleToggle()"
+                                class="border-l-2 border-purple-600 overflow-hidden max-h-0 duration-500 transition-all">
+                                <p class="p-3 text-gray-900">
+                                    cartime is an online platform for buying a new car or selling your old one! We bring
+                                    you great offers
+                                    from thousands of trusted partners so you can buy or sell your car in just a few
+                                    clicks.
+                                    No haggling and no fees.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="bg-white my-2 shadow-lg" x-data="accordion(2)">
+                            <h2 @click="handleClick()"
+                                class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer">
+                                <span>How does cartime work?</span>
+                                <svg :class="handleRotate()"
+                                    class="fill-current text-purple-700 h-6 w-6 transform transition-transform duration-500"
+                                    viewBox="0 0 20 20">
+                                    <path
+                                        d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10">
+                                    </path>
+                                </svg>
+                            </h2>
+                            <div class="border-l-2 border-purple-600 overflow-hidden max-h-0 duration-500 transition-all"
+                                x-ref="tab" :style="handleToggle()">
+                                <p class="p-3 text-gray-900">
+                                    It only takes a few minutes to get started. Whether you are buying or selling,
+                                    you answer a few questions, we send your information out to local and national
+                                    partners and they come back to you with great offers.
+
+                                    If buying a new car, once you receive an offer you are happy with, you can contact
+                                    your chosen dealer with ease. If you are selling your car, simply accept the offer
+                                    and we’ll reach out to arrange a collection.
+                                    We’re here to help if you need us at any step of the journey.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="bg-white my-2 shadow-lg" x-data="accordion(3)">
+                            <h2 @click="handleClick()"
+                                class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer">
+                                <span>Does it cost me anything to use cartime?</span>
+                                <svg :class="handleRotate()"
+                                    class="fill-current text-purple-700 h-6 w-6 transform transition-transform duration-500"
+                                    viewBox="0 0 20 20">
+                                    <path
+                                        d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10">
+                                    </path>
+                                </svg>
+                            </h2>
+                            <div class="border-l-2 border-purple-600 overflow-hidden max-h-0 duration-500 transition-all"
+                                x-ref="tab" :style="handleToggle()">
+                                <p class="p-3 text-gray-900">
+                                    No, it’s completely free! Whether buying or selling, you won’t face any costs - just great offers!
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <div class="mx-auto max-w-7xl bg-gray-50 px-2 py-10 lg:px-2">
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between">
+                <div class="w-full md:w-2/3 lg:w-1/2">
+                    <h2 class="text-3xl font-bold text-black">
+                        Sign up for our weekly newsletter
+                    </h2>
+                    <p class="mt-4 text-gray-600">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at
+                        ipsum eu nunc commodo posuere et sit amet ligula.
+                    </p>
+                    <div class="mt-4">
+                        <p class="font-semibold text-gray-800">
+                            Trusted by over 100,000+ businesses and individuals
+                        </p>
+                        <div class="mt-2 flex items-center">
+                            <div class="flex space-x-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="h-5 w-5 text-yellow-400">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                    </polygon>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="h-5 w-5 text-yellow-400">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                    </polygon>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="h-5 w-5 text-yellow-400">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                    </polygon>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="h-5 w-5 text-yellow-400">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                    </polygon>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="h-5 w-5 text-yellow-400">
+                                    <polygon
+                                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                    </polygon>
+                                </svg>
+                            </div>
+                            <span class="ml-2 inline-block">
+                                <span class="text-sm font-semibold text-gray-800">
+                                    4.8/5 . 3420 Reviews
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-10 w-full md:w-2/3 lg:mt-0 lg:w-1/2">
+                    <form class="flex lg:justify-center">
+                        <div class="flex w-full max-w-md flex-col space-y-4">
+                            <input
+                                class="flex h-10 w-full rounded-md border border-black/30 bg-transparent px-3 py-2 text-sm placeholder:text-gray-600 focus:outline-none focus:ring-1 focus:ring-black/30 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                                type="email" placeholder="Email" />
+                            <div class="frame">
+                                <button type="button" class="custom-btn btn-3">
+                                    <span>Subscribe</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <p class="mt-2 lg:text-center">
+                        <span class="text-sm text-gray-600">
+                            By signing up, you agree to our terms of service and privacy policy.
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="mx-auto mt-12 max-w-7xl">
+            <footer class="px-4 py-10">
+                <div class="flex flex-col md:flex-row md:items-center">
+                    <span>
+                        <svg width="40" height="46" viewBox="0 0 50 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M23.2732 0.2528C20.8078 1.18964 2.12023 12.2346 1.08477 13.3686C0 14.552 0 14.7493 0 27.7665C0 39.6496 0.0986153 41.1289 0.83823 42.0164C2.12023 43.5449 23.2239 55.4774 24.6538 55.5267C25.9358 55.576 46.1027 44.3832 48.2229 42.4602C49.3077 41.474 49.3077 41.3261 49.3077 27.8158C49.3077 14.3055 49.3077 14.1576 48.2229 13.1714C46.6451 11.7415 27.1192 0.450027 25.64 0.104874C24.9497 -0.0923538 23.9142 0.00625992 23.2732 0.2528ZM20.2161 21.8989C20.2161 22.4906 18.9835 23.8219 17.0111 25.3997C15.2361 26.7803 13.8061 27.9637 13.8061 28.0623C13.8061 28.1116 15.2361 29.0978 16.9618 30.2319C18.6876 31.3659 20.2655 32.6479 20.4134 33.0917C20.8078 34.0286 19.871 35.2119 18.8355 35.2119C17.8001 35.2119 9.0233 29.3936 8.67815 28.5061C8.333 27.6186 9.36846 26.5338 14.3485 22.885C17.6521 20.4196 18.4904 20.0252 19.2793 20.4196C19.7724 20.7155 20.2161 21.3565 20.2161 21.8989ZM25.6893 27.6679C23.4211 34.9161 23.0267 35.7543 22.1391 34.8668C21.7447 34.4723 22.1391 32.6479 23.6677 27.9637C26.2317 20.321 26.5275 19.6307 27.2671 20.3703C27.6123 20.7155 27.1685 22.7864 25.6893 27.6679ZM36.0932 23.2302C40.6788 26.2379 41.3198 27.0269 40.3337 28.1609C39.1503 29.5909 31.6555 35.2119 30.9159 35.2119C29.9298 35.2119 28.9436 33.8806 29.2394 33.0424C29.3874 32.6479 30.9652 31.218 32.7403 29.8867L35.9946 27.4706L32.5431 25.1532C30.6201 23.9205 29.0915 22.7371 29.0915 22.5892C29.0915 21.7509 30.2256 20.4196 30.9159 20.4196C31.3597 20.4196 33.6771 21.7016 36.0932 23.2302Z"
+                                fill="black"></path>
+                        </svg>
+                    </span>
+                    <div class="mt-4 grow md:ml-12 md:mt-0">
+                        <p class="text-base font-semibold text-gray-700">
+                            © 2023 DevUI Component Library
+                        </p>
+                    </div>
+                </div>
+                <div class="mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+                    <div class="mb-8 lg:mb-0">
+                        <p class="mb-6 text-lg font-semibold text-gray-700">Company</p>
+                        <ul class="flex flex-col space-y-4 text-[14px] font-medium text-gray-500">
+                            <li>About us</li>
+                            <li>Company History</li>
+                            <li>Our Team</li>
+                            <li>Our Vision</li>
+                            <li>Press Release</li>
+                        </ul>
+                    </div>
+                    <div class="mb-8 lg:mb-0">
+                        <p class="mb-6 text-lg font-semibold text-gray-700">Our Stores</p>
+                        <ul class="flex flex-col space-y-4 text-[14px] font-medium text-gray-500">
+                            <li>Washington</li>
+                            <li>New Hampshire</li>
+                            <li>Maine</li>
+                            <li>Texas</li>
+                            <li>Indiana</li>
+                        </ul>
+                    </div>
+                    <div class="mb-8 lg:mb-0">
+                        <p class="mb-6 text-lg font-semibold text-gray-700">Services</p>
+                        <ul class="flex flex-col space-y-4 text-[14px] font-medium text-gray-500">
+                            <li>UI / UX Design</li>
+                            <li>App Development</li>
+                            <li>API reference</li>
+                            <li>API status</li>
+                            <li>Documentation</li>
+                        </ul>
+                    </div>
+                    <div class="mb-8 lg:mb-0">
+                        <p class="mb-6 text-lg font-semibold text-gray-700">Legal</p>
+                        <ul class="flex flex-col space-y-4 text-[14px] font-medium text-gray-500">
+                            <li>Privacy Policy</li>
+                            <li>Terms of Service</li>
+                            <li>Cookie Policy</li>
+                            <li>Disclaimer</li>
+                            <li>Media Policy</li>
+                        </ul>
+                    </div>
+                    <div class="mb-8 lg:mb-0">
+                        <p class="mb-6 text-lg font-semibold text-gray-700">Social Links</p>
+                        <ul class="flex flex-col space-y-4 text-[14px] font-medium text-gray-500">
+                            <li>Facebook</li>
+                            <li>Twitter</li>
+                            <li>Instagram</li>
+                            <li>Linkedin</li>
+                            <li>YouTube</li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+</body>
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.store('accordion', {
+            tab: 0
+        });
+
+        Alpine.data('accordion', (idx) => ({
+            init() {
+                this.idx = idx;
+            },
+            idx: -1,
+            handleClick() {
+                this.$store.accordion.tab = this.$store.accordion.tab === this.idx ? 0 : this.idx;
+            },
+            handleRotate() {
+                return this.$store.accordion.tab === this.idx ? 'rotate-180' : '';
+            },
+            handleToggle() {
+                return this.$store.accordion.tab === this.idx ? `max-height: ${this.$refs.tab.scrollHeight}px` : '';
+            }
+        }));
+    })
+</script>
+
+</html>

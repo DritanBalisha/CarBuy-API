@@ -1,0 +1,4 @@
+FuelTypeID: 1, FuelTypeName: Petrol
+FuelTypeID: 2, FuelTypeName: Diesel
+FuelTypeID: 3, FuelTypeName: Hybrid
+FuelTypeID: 4, FuelTypeName: Electric

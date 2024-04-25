@@ -1,0 +1,5 @@
+- 1 suitcase (120 Liters)
+- 2 suitcases (240 Liters)
+- 3 suitcases (360 Liters)
+- 4 suitcases (480 Liters)
+- +5 suitcases (600 Liters)

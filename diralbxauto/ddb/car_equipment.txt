@@ -1,0 +1,18 @@
+EquipmentID: 1, EquipmentName: Rearview camera
+EquipmentID: 2, EquipmentName: Satnav
+EquipmentID: 3, EquipmentName: Climate control
+EquipmentID: 4, EquipmentName: Parking sensors
+EquipmentID: 5, EquipmentName: Course control 
+EquipmentID: 6, EquipmentName: Touchscreen infotainment
+EquipmentID: 7, EquipmentName: Heated seats
+EquipmentID: 8, EquipmentName: Apple CarPlay
+EquipmentID: 9, EquipmentName: Android Auto
+EquipmentID: 10, EquipmentName: Leather seats
+EquipmentID: 11, EquipmentName: Starlight headliner
+EquipmentID: 12, EquipmentName: Rotating dashboard
+EquipmentID: 13, EquipmentName: Night Vision System
+EquipmentID: 14, EquipmentName: Automatic Emergency Braking 
+EquipmentID: 15, EquipmentName: Lane Departure Warning System 
+EquipmentID: 16, EquipmentName: 2 or more keys 
+EquipmentID: 17, EquipmentName: Sunroof
+EquipmentID: 18, EquipmentName: Heated/cooled seats
